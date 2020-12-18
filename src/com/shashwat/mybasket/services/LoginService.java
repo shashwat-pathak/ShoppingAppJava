@@ -8,13 +8,14 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.shashwat.mybasket.DBOperations.DBUtilities;
+import com.shashwat.mybasket.interfaces.LoginServiceInterface;
 import com.shashwat.mybasket.models.User;
 
 /**
  * @author Shashwat Pathak
  *
  */
-public class LoginService {
+public class LoginService implements LoginServiceInterface {
 	public ArrayList<Map<String, Object>> loginUser(User user) throws SQLException {
 		Boolean loginStatus = false;
 		String query = "Select * from users where username = '" + user.getUserName() + "' and password = '"

@@ -8,12 +8,13 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.shashwat.mybasket.DBOperations.DBUtilities;
+import com.shashwat.mybasket.interfaces.ProductServiceInterface;
 
 /**
  * @author Shashwat Pathak
  *
  */
-public class ProductService {
+public class ProductService implements ProductServiceInterface {
 	public ArrayList<String> getCategories() throws SQLException {
 		ArrayList categories = new ArrayList<String>();
 		String query = "Select distinct category from products";
